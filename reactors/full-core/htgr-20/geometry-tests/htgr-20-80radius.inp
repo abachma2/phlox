@@ -2038,15 +2038,15 @@ cell coolant 3 cool -corebg
 pbed pebs 3 "all-pbbls-20.inp" pow
 
 % --- inner cylinder
-surf innercyl cyl 0.0 0.0 90 -90 90
+surf innercyl cyl 0.0 0.0 80 -110 110
 % --- outer reflector shell
-surf outercyl cyl 0.0 0.0 165 -165 165
+surf outercyl cyl 0.0 0.0 155 -185 185
 
 cell fuelpeb0 0 fill pebs  -innercyl
 cell reflector 0 graph     innercyl -outercyl
 cell outwith 0 outside   outercyl
 
-surf inside_outer cyl 0.0 0.0 164 -164 164
+surf inside_outer cyl 0.0 0.0 154 -184 184
 det jout_at_outer ds inside_outer 1
 
 % run parameters
@@ -2064,7 +2064,7 @@ set usym 0 3 3 0.0 0.0 0.0 60.0
 
 plot 33 1000 1000
 plot 33 1000 1000 0.0 -15 15 -15 15
-plot 13 1000 1000
+plot 13 1600 2200
 
 mesh 3 1000 1000
-mesh 1 1000 1000
+mesh 1 1600 2200
