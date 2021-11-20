@@ -8,7 +8,7 @@ set acelib sss_jeff312.xsdata
  * Material definitions *
  ************************/
 
-% --- fuel: UCO , guessing enrichment of 15% for now. using
+
 % --- density/chemical formula of AGR2 UCO from nagley et. all "fabrication..."
 
 mat fuel0      -11.0
@@ -2049,9 +2049,78 @@ cell outwith 0 outside   outercyl
 surf inside_outer cyl 0.0 0.0 164 -164 164
 det jout_at_outer ds inside_outer 1
 
+% finds the total fission cross section for thermal and fast radially and axially
+ene twogroup 4 default2
+det radialfcross dr -6 void de twogroup dx -165 165 3300
+det axialfcross dr -6 void de twogroup dz -165 165 3300
+
+
+%finds total flux, 2 group, radially and axially
+det radialtotflux de twogroup dx -165 165 3300
+det axialtotflux de twogroup dz -165 165 3300
+
+% finds the energy spectrum of the energy/space integrated flux
+ene multigroup 4 nj2
+det energyspectrum de multigroup
+
+surf freshpeb sph 7.26525E+01  3.76430E+01 -7.04744E+01 3.0
+cell freshcell -1 void -freshpeb
+surf 6peb sph 6.08817E+01 -2.91747E+01  2.54247E+01 3.0
+cell 6cell -1 void -6peb
+
+%total fission cross section for thermal and fast in one fresh and one burnt peb
+det freshfcross dr -6 void de twogroup dc freshcell
+det 6fcross dr -6 void de twogroup dc 6cell
+
+%tot flux, two group, in one fresh and one burnt
+det freshtotflux de twogroup dc freshcell
+det 6totflux de twogroup dc 6cell
+
+%the following are a test to get spatial binning in pebbles
+det freshfcrossX dr -6 void de twogroup dc freshcell dx 69.6525 75.6525 600
+det 6fcrossX dr -6 void de twogroup dc 6cell dx 57.8817 63.8817 600
+
+det freshfcrossY dr -6 void de twogroup dc freshcell dy 34.643 40.643 600
+det 6fcrossY dr -6 void de twogroup dc 6cell dy -32.1747 -26.1747 600
+
+det freshfcrossZ dr -6 void de twogroup dc freshcell dz -73.4744 -67.4744 600
+det 6fcrossZ dr -6 void de twogroup dc 6cell dz 22.4247 28.4247 600
+
+%-----
+
+
+det freshtotfluxX de twogroup dc freshcell dx 69.6525 75.6525 600
+det 6totfluxX de twogroup dc 6cell dx 57.8817 63.8817 600
+
+det freshtotfluxY de twogroup dc freshcell dy 34.643 40.643 600
+det 6totfluxY de twogroup dc 6cell dy -32.1747 -26.1747 600
+
+det freshtotfluxZ de twogroup dc freshcell dz -73.4744 -67.4744 600
+det 6totfluxZ de twogroup dc 6cell dz 22.4247 28.4247 600
+
+
+
+mesh 8 11 freshfcross 1 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 11 6fcross 1 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+
+mesh 8 13 freshtotflux 1 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 13 6totflux 1 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+%---
+mesh 8 11 freshfcross 2 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 11 6fcross 2 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+
+mesh 8 13 freshtotflux 2 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 13 6totflux 2 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+% ---
+
+mesh 8 11 freshfcross 3 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 11 6fcross 3 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+
+mesh 8 13 freshtotflux 3 1000 1000 [ 0 69.6525 75.6525 34.643 40.643 -73.4744 -67.4744 ]
+mesh 8 13 6totflux 3 1000 1000 [ 0 57.8817 63.8817 -32.1747 -26.1747 22.4247 28.4247  ]
+
 % run parameters
 
-set title 20mwfullcore60reflect
 
 set pop 50000 100 50
 set bc 1
@@ -2060,7 +2129,7 @@ set opti 1
 ene 8group 4 cas8
 set fum 8group 2 0 1E-7
 set power 2E7
-set usym 0 3 3 0.0 0.0 0.0 60.0
+%set usym 0 3 3 0.0 0.0 0.0 60.0
 
 plot 33 1000 1000
 plot 33 1000 1000 0.0 -15 15 -15 15
