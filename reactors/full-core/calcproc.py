@@ -227,7 +227,7 @@ def flux_plane(flux_data, size = 1650, x_col = 8, flux_col = 10):
         temp = []
         for j in range(size):
             key = i*size + j
-            temp.append(flux_data[flux_data.loc[:,x_col] == i + 1].loc[:,flux_col])
+            temp.append(flux_data[flux_data.loc[:,x_col] == i + 1].loc[key,flux_col])
         if i%50 == 0:
             print("Loop " + str(i)) 
         flux_matrix.append(temp)

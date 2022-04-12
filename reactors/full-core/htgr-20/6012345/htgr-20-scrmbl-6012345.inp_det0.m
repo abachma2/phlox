@@ -1,5 +1,3 @@
-
-DETjout_at_outer = [
-    1    1    1    1    1    1    1    1    1    1 -2.99009E+17 0.00131 
-];
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:2ab81bb392758c04028451efa137a7d85207cdd48bdf5040dae0eebd7cccb1e6
+size 99

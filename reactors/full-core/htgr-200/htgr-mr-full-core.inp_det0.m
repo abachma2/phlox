@@ -1,15 +1,3 @@
-
-DETjin = [
-    1    1    1    1    1    1    1    1    1    1  2.61103E+19 0.00058 
-];
-
-
-DETjout = [
-    1    1    1    1    1    1    1    1    1    1 -2.82751E+19 0.00057 
-];
-
-
-DETjout_at_outer = [
-    1    1    1    1    1    1    1    1    1    1 -1.35352E+18 0.00130 
-];
-
+version https://git-lfs.github.com/spec/v1
+oid sha256:87863a602d30c522603d37bef2ffe87a7f080b517487a1cf62cd1cda6285cc9d
+size 278

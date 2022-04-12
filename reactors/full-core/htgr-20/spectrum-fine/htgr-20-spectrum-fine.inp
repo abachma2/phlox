@@ -11,7 +11,7 @@ set acelib sss_jeff312.xsdata
 % --- fuel: UCO , guessing enrichment of 15% for now. using
 % --- density/chemical formula of AGR2 UCO from nagley et. all "fabrication..."
 
-mat fuel0      -11.0
+mat fuel0      -11.0 moder grph 6000
 92235.08c    -0.17698
 92238.08c    -0.71913
 8016.08c     -0.086060
@@ -19,7 +19,7 @@ mat fuel0      -11.0
 
 % --- anything less than 10-18 will round to zero, so can be removed (but keep list of removed)
 
-mat fuel1      -11.0
+mat fuel1      -11.0 moder grph 6000
 H-1.08c       1.5189764648739564e-09
 H-2.08c       1.3660305085084884e-09
 H-3.08c       2.6297485186826156e-08
@@ -336,7 +336,7 @@ Cf-251.08c       6.738059474415831e-32
 
 % ---------------------------------------------------
 
-mat fuel2  -11.0
+mat fuel2  -11.0 moder grph 6000
 H-1.08c       3.3171128305900866e-09
 H-2.08c       2.7721426673834793e-09
 H-3.08c       5.384715117626226e-08
@@ -653,7 +653,7 @@ Cf-251.08c       5.448092199709017e-28
 
 % ---------------------------------------------------
 
-mat fuel3 -11.0
+mat fuel3 -11.0 moder grph 6000
 H-1.08c       5.454000632147517e-09
 H-2.08c       4.210383984098382e-09
 H-3.08c       8.292456942772299e-08
@@ -970,7 +970,7 @@ Cf-251.08c       9.588862074350069e-26
 
 % ---------------------------------------------------
 
-mat fuel4 -11.0
+mat fuel4 -11.0 moder grph 6000
 H-1.08c       7.921320891625953e-09
 H-2.08c       5.649007595450383e-09
 H-3.08c       1.1309819652032742e-07
@@ -1287,7 +1287,7 @@ Cf-251.08c       3.85150101055325e-24
 
 % ---------------------------------------------------
 
-mat fuel5 -11.0
+mat fuel5 -11.0 moder grph 6000
 H-1.08c       1.0781235452443745e-08
 H-2.08c       7.107266171225202e-09
 H-3.08c       1.4487455670826424e-07
@@ -1604,7 +1604,7 @@ Cf-251.08c       7.422444957600254e-23
 
 % ---------------------------------------------------
 
-mat fuel6 -11.0
+mat fuel6 -11.0 moder grph 6000
 H-1.08c       1.4039761314610683e-08
 H-2.08c       8.575872266426048e-09
 H-3.08c       1.7809450461743885e-07
@@ -1929,7 +1929,7 @@ mat cool      0.0006 rgb 68 170 153
 % --- reflector: HTGR graphite - have notes on this graphite, going with
 % --- nat comp for now
 
-mat graph    -1.74 rgb 136 34 85
+mat graph    -1.74 rgb 136 34 85 moder grph 6000
 6000.08c    9.99E-01
 5010.08c    4.975E-07
 5011.08c    2.0025E-06
@@ -1937,10 +1937,10 @@ mat graph    -1.74 rgb 136 34 85
 % --- graph mat can be used for carbon buffer in TRISO particle
 % --- below input other TRISO mats
 
-mat pyroc   -2.2 rgb 221 204 119
+mat pyroc   -2.2 rgb 221 204 119 moder grph 6000
 6000.08c   1.0
 
-mat sic     -3.1 rgb 136 204 238
+mat sic     -3.1 rgb 136 204 238 moder grph 6000
 14028.08c   0.4611
 14029.08c   0.02343
 14030.08c   0.01546
@@ -2065,19 +2065,35 @@ det 6spectrum de multigroup dc 6cell dt -3
 det coolspectrum de multigroup dm cool dt -3
 det reflectspectrum de multigroup dc reflector dt -3
 
+surf 1peb sph -9.47307E+00  6.22186E+01  6.11573E+01 3.0
+cell 1cell -1 void -1peb
+surf 2peb sph -5.45039E+01 -4.39984E+01  8.55051E+00 3.0
+cell 2cell -1 void -2peb
+surf 3peb sph 3.50267E+01 -3.57548E+01  7.54743E+01 3.0
+cell 3cell -1 void -3peb
+surf 4peb sph 5.56294E+01 -6.65465E+01 -6.97069E+01 3.0
+cell 4cell -1 void -4peb
+surf 5peb sph -4.14746E+01  2.18757E+01 -6.71418E+01 3.0
+cell 5cell -1 void -5peb
+
+det 1spectrum de multigroup dc 1cell dt -3
+det 2spectrum de multigroup dc 2cell dt -3
+det 3spectrum de multigroup dc 3cell dt -3
+det 4spectrum de multigroup dc 4cell dt -3
+det 5spectrum de multigroup dc 5cell dt -3
 
 % run parameters
 
 set title 20mwfullcore60reflect
 
-set pop 75000 250 100
+set pop 50000 100 50
 set bc 1
 set opti 1
 
 ene 8group 4 cas8
 set fum 8group 2 0 1E-7
 set power 2E7
-set usym 0 3 3 0.0 0.0 0.0 60.0
+%set usym 0 3 3 0.0 0.0 0.0 60.0
 
 plot 33 1000 1000
 plot 33 1000 1000 0.0 -15 15 -15 15
