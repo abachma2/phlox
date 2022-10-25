@@ -1984,7 +1984,7 @@ sic     0.01613
 graph   0.9356
 
 
-therm grph gr08.32t
+therm grph grph.10t
 
  /************************
   * Geometry definitions *
@@ -2050,6 +2050,8 @@ det jout ds innercyl 1
 surf inside_outer cyl 0.0 0.0 215 -574 574
 det jout_at_outer ds inside_outer 1
 
+%include "./branches.inc"
+
 % Set Cross section Libraries 
 set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
 set declib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.decay"
@@ -2065,9 +2067,9 @@ set power 2E8
 set bc 1
 set opti 1
 
-plot 33 8000 8000
-plot 33 9000 9000 0.0 -15 15 -15 15
-plot 13 864 2300
+%plot 33 8000 8000
+%plot 33 9000 9000 0.0 -15 15 -15 15
+%plot 13 864 2300
 
 mesh 3 1000 1000
 mesh 1 1000 1000
