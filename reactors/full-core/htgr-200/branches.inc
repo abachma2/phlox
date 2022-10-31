@@ -46,7 +46,7 @@ branch high_moderator_temp
 stp graph -1.74 900
 var TMD 900
 
-coef 2
+coef 1 0
 2 base_fuel_temp high_fuel_temp
 2 base_coolant_temp high_coolant_temp
 2 base_moderator_temp high_moderator_temp
