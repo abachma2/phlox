@@ -2048,7 +2048,7 @@ det jout ds innercyl 1
 surf inside_outer cyl 0.0 0.0 215 -574 574
 det jout_at_outer ds inside_outer 1
 
-%include "./branches.inc"
+include "./branches.inc"
 
 % Set Cross section Libraries 
 set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
