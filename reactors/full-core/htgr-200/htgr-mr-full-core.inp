@@ -2042,13 +2042,18 @@ cell outwith 0 outside   outercyl
 surf albsurf hexxprism 0.0 0.0 124 -483 483
 set alb 0 albsurf 1
 
-det jin ds innercyl -1
-det jout ds innercyl 1
+%det jin ds innercyl -1
+%det jout ds innercyl 1
 
 surf inside_outer cyl 0.0 0.0 215 -574 574
-det jout_at_outer ds inside_outer 1
+% det jout_at_outer ds inside_outer 1
 
-include "./branches.inc"
+
+ene twogroup 4 default2
+det axial_flux de twogroup dz -575 575 1150
+det radial_flux de twogroup dx -483 483 966 dy -483 483 966
+
+%include "./branches.inc"
 
 % Set Cross section Libraries 
 set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
@@ -2057,7 +2062,7 @@ set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.nfy"
 
 % run parameters
 
-set pop 70000 150 50
+set pop 7000 20 5
 
 %set fpcut 1E-10
 set fum defaultmg 2 1 1E-7
