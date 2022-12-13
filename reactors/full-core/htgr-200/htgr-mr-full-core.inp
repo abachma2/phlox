@@ -9,7 +9,7 @@
 % --- fuel: UCO
 % --- density/chemical formula of AGR2 UCO from nagley et. all "fabrication..."
 
-mat fuel0      -11.0 tmp 800
+mat fuel0      -10.813 tmp 800
 6000.81c -1.7761e-02
 8016.81c -8.6071e-02
 92235.81c -1.3891e-01
@@ -17,7 +17,7 @@ mat fuel0      -11.0 tmp 800
 
 % --- anything less than 10-18 will round to zero, so can be removed (but keep list of removed)
 
-mat fuel1      -11.0 tmp 800
+mat fuel1      -10.813 tmp 800
 1001.81c -1.5632e-09
 1002.81c -1.3812e-09
 1003.81c -2.6688e-08
@@ -332,7 +332,7 @@ mat fuel1      -11.0 tmp 800
 98249.81c -3.3351e-24
 98251.81c -4.8646e-31
 
-mat fuel2      -11.0 tmp 800
+mat fuel2      -10.813 tmp 800
 
 1001.81c -3.4619e-09
 1002.81c -2.8083e-09
@@ -648,7 +648,7 @@ mat fuel2      -11.0 tmp 800
 98249.81c -2.1441e-20
 98251.81c -3.9301e-27
 
-mat fuel3      -11.0 tmp 800
+mat fuel3      -10.813 tmp 800
 
 1001.81c -5.7445e-09
 1002.81c -4.2685e-09
@@ -964,7 +964,7 @@ mat fuel3      -11.0 tmp 800
 98249.81c -3.3354e-18
 98251.81c -7.4702e-25
 
-mat fuel4      -11.0 tmp 800
+mat fuel4      -10.813 tmp 800
 
 1001.81c -8.3931e-09
 1002.81c -5.7281e-09
@@ -1281,7 +1281,7 @@ mat fuel4      -11.0 tmp 800
 98251.81c -3.4024e-23
 
 
-mat fuel5      -11.0 tmp 800
+mat fuel5      -10.813 tmp 800
 
 1001.81c -1.1470e-08
 1002.81c -7.2077e-09
@@ -1597,7 +1597,7 @@ mat fuel5      -11.0 tmp 800
 98249.81c -2.1546e-15
 98251.81c -7.7846e-22
 
-mat fuel6      -11.0 tmp 800
+mat fuel6      -10.813 tmp 800
 
 1001.81c -1.4990e-08
 1002.81c -8.7004e-09
@@ -1916,13 +1916,13 @@ mat fuel6      -11.0 tmp 800
 
 % --- coolant: Helium, assuming all he-4
 
-mat cool      0.0006 rgb 68 170 153 tmp 800
+mat cool      -0.0017965 rgb 68 170 153 tmp 800
  2004.81c     1.00
 
 % --- reflector: HTGR graphite - have notes on this graphite, going with
 % --- nat comp for now
 
-mat graph    -1.74 rgb 136 34 85 tmp 800 moder grph 6000
+mat graph    -1.8529 rgb 136 34 85 tmp 800 moder grph 6000
  6000.81c    9.99E-01
  5010.81c    4.975E-07
  5011.81c    2.0025E-06
@@ -2053,7 +2053,7 @@ ene twogroup 4 default2
 det axial_flux de twogroup dz -575 575 1150
 det radial_flux de twogroup dx -483 483 966 dy -483 483 966
 
-%include "./branches.inc"
+include "./branches.inc"
 
 % Set Cross section Libraries 
 set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
@@ -2062,7 +2062,7 @@ set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.nfy"
 
 % run parameters
 
-set pop 7000 20 5
+set pop 70000 150 50
 
 %set fpcut 1E-10
 set fum defaultmg 2 1 1E-7

@@ -3,113 +3,112 @@
       feedback coefficients
 */
 
-% Change fuel temp
 branch BBB
-stp p0blend 11 800
-stp p1blend 11 800
-stp p2blend 11 800
-stp p3blend 11 800
-stp p4blend 11 800
-stp p5blend 11 800
-stp p5blend 11 800
-stp cool 0.0006 800
-stp graph -1.74 800 grph grph.15t grph.16t
+stp fuel0 -10.813 800
+stp fuel1 -10.813 800
+stp fuel2 -10.813 800
+stp fuel3 -10.813 800
+stp fuel4 -10.813 800
+stp fuel5 -10.813 800
+stp fuel6 -10.813 800
+stp cool -0.0017965 800
+stp graph -1.8529 800 grph grph.15t grph.16t
 var TALL 800 
 
 branch LBB
-stp p0blend 11 750
-stp p1blend 11 750
-stp p2blend 11 750
-stp p3blend 11 750
-stp p4blend 11 750
-stp p5blend 11 750
-stp p5blend 11 750
-stp cool 0.0006 800
-stp graph -1.74 800 grph grph.15t grph.16t
+stp fuel0 -10.828 750
+stp fuel1 -10.828 750
+stp fuel2 -10.828 750
+stp fuel3 -10.828 750
+stp fuel4 -10.828 750
+stp fuel5 -10.828 750
+stp fuel6 -10.828 750
+stp cool -0.0017965 800
+stp graph -1.8529 800 grph grph.15t grph.16t
 var TFU 750
 
 branch BLB
-stp p0blend 11 800
-stp p1blend 11 800
-stp p2blend 11 800
-stp p3blend 11 800
-stp p4blend 11 800
-stp p5blend 11 800
-stp p5blend 11 800
-stp cool 0.0006 750
-stp graph -1.74 800 grph grph.15t grph.16t
+stp fuel0 -10.813 800
+stp fuel1 -10.813 800
+stp fuel2 -10.813 800
+stp fuel3 -10.813 800
+stp fuel4 -10.813 800
+stp fuel5 -10.813 800
+stp fuel6 -10.813 800
+stp cool -0.00191555 750
+stp graph -1.8529 800 grph grph.15t grph.16t
 var TCO 750
 
 branch BBL
-stp p0blend 11 800
-stp p1blend 11 800
-stp p2blend 11 800
-stp p3blend 11 800
-stp p4blend 11 800
-stp p5blend 11 800
-stp p5blend 11 800
-stp cool 0.0006 800
-stp graph -1.74 750 grph grph.14t grph.15t
+stp fuel0 -10.813 800
+stp fuel1 -10.813 800
+stp fuel2 -10.813 800
+stp fuel3 -10.813 800
+stp fuel4 -10.813 800
+stp fuel5 -10.813 800
+stp fuel6 -10.813 800
+stp cool -0.0017965 800
+stp graph -1.8548 750 grph grph.14t grph.15t
 var TMD 750
 
 branch LLL
-stp p0blend 11 750
-stp p1blend 11 750
-stp p2blend 11 750
-stp p3blend 11 750
-stp p4blend 11 750
-stp p5blend 11 750
-stp p5blend 11 750
-stp cool 0.0006 750
-stp graph -1.74 750 grph grph.14t grph.15t
+stp fuel0 -10.828 750
+stp fuel1 -10.828 750
+stp fuel2 -10.828 750
+stp fuel3 -10.828 750
+stp fuel4 -10.828 750
+stp fuel5 -10.828 750
+stp fuel6 -10.828 750
+stp cool -0.00191555 750
+stp graph -1.8548 750 grph grph.14t grph.15t
 var TALL 750
 
 branch HBB
-stp p0blend 11 850
-stp p1blend 11 850
-stp p2blend 11 850
-stp p3blend 11 850
-stp p4blend 11 850
-stp p5blend 11 850
-stp p5blend 11 850
-stp cool 0.0006 800
-stp graph -1.74 800 grph grph.15t grph.16t
+stp fuel0 -10.797 850
+stp fuel1 -10.797 850
+stp fuel2 -10.797 850
+stp fuel3 -10.797 850
+stp fuel4 -10.797 850
+stp fuel5 -10.797 850
+stp fuel6 -10.797 850
+stp cool -0.0017965 800
+stp graph -1.8529 800 grph grph.15t grph.16t
 var TFU 850
 
 branch BHB
-stp p0blend 11 800
-stp p1blend 11 800
-stp p2blend 11 800
-stp p3blend 11 800
-stp p4blend 11 800
-stp p5blend 11 800
-stp p5blend 11 800
-stp cool 0.0006 850
-stp graph -1.74 800 grph grph.15t grph.16t
+stp fuel0 -10.813 800
+stp fuel1 -10.813 800
+stp fuel2 -10.813 800
+stp fuel3 -10.813 800
+stp fuel4 -10.813 800
+stp fuel5 -10.813 800
+stp fuel6 -10.813 800
+stp cool -0.0016914 850
+stp graph -1.8529 800 grph grph.15t grph.16t
 var TCO 850
 
 branch BBH
-stp p0blend 11 800
-stp p1blend 11 800
-stp p2blend 11 800
-stp p3blend 11 800
-stp p4blend 11 800
-stp p5blend 11 800
-stp p5blend 11 800
-stp cool 0.0006 800
-stp graph -1.74 850 grph grph.15t grph.16t
+stp fuel0 -10.813 800
+stp fuel1 -10.813 800
+stp fuel2 -10.813 800
+stp fuel3 -10.813 800
+stp fuel4 -10.813 800
+stp fuel5 -10.813 800
+stp fuel6 -10.813 800
+stp cool -0.0017965 800
+stp graph -1.8509 850 grph grph.15t grph.16t
 var TMD 850 
 
 branch HHH
-stp p0blend 11 850
-stp p1blend 11 850
-stp p2blend 11 850
-stp p3blend 11 850
-stp p4blend 11 850
-stp p5blend 11 850
-stp p5blend 11 850
-stp cool 0.0006 850
-stp graph -1.74 850 grph grph.15t grph.16t
+stp fuel0 -10.797 850
+stp fuel1 -10.797 850
+stp fuel2 -10.797 850
+stp fuel3 -10.797 850
+stp fuel4 -10.797 850
+stp fuel5 -10.797 850
+stp fuel6 -10.797 850
+stp cool -0.0016914 850
+stp graph -1.8509 850 grph grph.15t grph.16t
 var TALL 850 
 
 coef 1 0 
