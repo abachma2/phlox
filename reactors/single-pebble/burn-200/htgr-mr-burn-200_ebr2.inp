@@ -2,9 +2,9 @@
 
 % --- for triso particle, need fuel core, buffer, pyro-carbon. and silicon carbide mats
 
-set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endb71.xsdata"
-set declib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endb71.decay"
-set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endb71.nfy"
+set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
+set declib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.decay"
+set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.nfy"
 
 /************************
  * Material definitions *
@@ -47,7 +47,7 @@ mat sic     -3.1 rgb 50 150 50
 14030.81c   0.01546
  6000.81c   0.5
 
-therm grph gr08.32t
+therm grph grph.15t
 
  /************************
   * Geometry definitions *
