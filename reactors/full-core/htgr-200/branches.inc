@@ -40,13 +40,13 @@ stp graph -1.8529 800 grph grph.15t grph.16t
 var TFU 750
 
 branch DCC
-stp fuel0 -10.828 850
-stp fuel1 -10.828 850
-stp fuel2 -10.828 850
-stp fuel3 -10.828 850
-stp fuel4 -10.828 850
-stp fuel5 -10.828 850
-stp fuel6 -10.828 850
+stp fuel0 -10.797 850
+stp fuel1 -10.797 850
+stp fuel2 -10.797 850
+stp fuel3 -10.797 850
+stp fuel4 -10.797 850
+stp fuel5 -10.797 850
+stp fuel6 -10.797 850
 stp cool -0.0035792 800
 stp graph -1.8529 800 grph grph.15t grph.16t
 var TFU 850
@@ -120,7 +120,7 @@ stp fuel4 -10.813 800
 stp fuel5 -10.813 800
 stp fuel6 -10.813 800
 stp cool -0.0035792 800
-stp graph -1.8548 700 grph grph.14t grph.15t
+stp graph -1.8568 700 grph grph.14t grph.15t
 var TMD 700
 
 branch CCB
@@ -144,7 +144,7 @@ stp fuel4 -10.813 800
 stp fuel5 -10.813 800
 stp fuel6 -10.813 800
 stp cool -0.0035792 800
-stp graph -1.8548 850 grph grph.14t grph.15t
+stp graph -1.8509 850 grph grph.15t grph.16t
 var TMD 850
 
 branch CCE
@@ -156,7 +156,7 @@ stp fuel4 -10.813 800
 stp fuel5 -10.813 800
 stp fuel6 -10.813 800
 stp cool -0.0035792 800
-stp graph -1.8548 900 grph grph.14t grph.15t
+stp graph -1.8490 900 grph grph.15t grph.16t
 var TMD 900
 
 branch AAA
@@ -168,7 +168,7 @@ stp fuel4 -10.843 700
 stp fuel5 -10.843 700
 stp fuel6 -10.843 700
 stp cool -0.0040843 700
-stp graph -1.8548 700 grph grph.14t grph.15t
+stp graph -1.8568 700 grph grph.14t grph.15t
 var TALL 700
 
 branch BBB
@@ -204,7 +204,7 @@ stp fuel4 -10.782 900
 stp fuel5 -10.782 900
 stp fuel6 -10.782 900
 stp cool -0.0031851 900
-stp graph -1.8509 900 grph grph.15t grph.16t
+stp graph -1.8490 900 grph grph.15t grph.16t
 var TALL 900 
 
 coef 1 0 
