@@ -850,19 +850,6 @@ mat fuel3      -10.813 tmp 800
 
 mat fuel4      -10.813 tmp 800
 
-
-Nuclide	zaid
-270	% Cm248	96248.81c
-271	% Cm249	96249.81c
-272	% Cm250	96250.81c
-273	% Bk249	97249.81c
-274	% Cf249	98249.81c
-275	% Cf251	98251.81c
-276	% lost data	lost_data
-277	% total	total
-4
-for index, row in data.iterrows():
-    print(data['zaid'][index], float(data['4'][index])/float(data['4'][277])*-1)
 1001.81c -4.695369965358955e-11
 1002.81c -1.1028082374294233e-11
 1003.81c -2.0245654786145594e-14
@@ -1422,19 +1409,6 @@ mat fuel5      -10.813 tmp 800
 
 mat fuel6      -10.813 tmp 800
 
-
-Nuclide	zaid
-270	% Cm248	96248.81c
-271	% Cm249	96249.81c
-272	% Cm250	96250.81c
-273	% Bk249	97249.81c
-274	% Cf249	98249.81c
-275	% Cf251	98251.81c
-276	% lost data	lost_data
-277	% total	total
-6
-for index, row in data.iterrows():
-    print(data['zaid'][index], float(data['6'][index])/float(data['6'][277])*-1)
 1001.81c -8.250265244653623e-11
 1002.81c -1.8282270594801706e-11
 1003.81c -4.468731300880461e-14
