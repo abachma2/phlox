@@ -119,10 +119,11 @@ surf inside_outer cyl 0.0 0.0 215 -574 574
 
 
 ene twogroup 4 default2
+ene multigroup 4 scale238
 det axial_flux de twogroup dz -575 575 1150
 det radial_flux de twogroup dx -483 483 966 dy -483 483 966
 
-include "./branches.inc"
+%include "./branches.inc"
 
 % Set Cross section Libraries 
 set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
@@ -131,7 +132,7 @@ set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.nfy"
 
 % run parameters
 
-set pop 70000 150 50
+set pop 100000 200 50
 
 %set fpcut 1E-10
 set fum defaultmg 2 1 1E-7
@@ -145,3 +146,6 @@ set opti 1
 
 mesh 3 1000 1000
 mesh 1 1000 1000
+
+% Generate 1 group cross sections
+include "./xs_nuclides.inc"
