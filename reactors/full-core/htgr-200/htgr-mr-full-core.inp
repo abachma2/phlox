@@ -51,7 +51,7 @@ sic     0.01613
 graph   0.9356
 
 
-therm grph grph.15t
+therm grph grj3.18t
 
  /************************
   * Geometry definitions *
@@ -120,15 +120,16 @@ surf inside_outer cyl 0.0 0.0 215 -574 574
 
 ene twogroup 4 default2
 ene multigroup 4 scale238
-det axial_flux de twogroup dz -575 575 1150
-det radial_flux de twogroup dx -483 483 966 dy -483 483 966
+%det axial_flux de twogroup dz -575 575 1150 dv 933156
+%det radial_flux de twogroup dx -483 483 966 dy -483 483 966 dv 1150
+det core_flux de twogroup dx -483 483 322 dy -483 483 322 dz -575 575 230 dv 45.0
 
 %include "./branches.inc"
 
 % Set Cross section Libraries 
-set acelib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.xsdata"
-set declib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.decay"
-set nfylib "/home/amandabachmann/serpent/xsdata/endfb71_ace/endfb71.nfy"
+set acelib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7u.xsdata"
+set declib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.dec"
+set nfylib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.nfy"
 
 % run parameters
 
