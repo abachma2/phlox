@@ -1,0 +1,172 @@
+% --- model of xe-100 core
+
+% --- for triso particle, need fuel core, buffer, pyro-carbon. and silicon carbide mats
+
+/************************
+ * Material definitions *
+ ************************/
+
+include "./pure_materials.inc"
+
+%kept for reference
+%mix p0blend
+%fuel0   0.01105
+%pyroc   0.03726
+%sic     0.01613
+%graph   0.9356
+
+
+
+therm grph grj3.18t
+
+ /************************
+  * Geometry definitions *
+  ************************/
+
+particle 0pass
+fuel0	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 10 inf
+cell 10 2-0 graph -10
+pbed p0part 2-0 "0pass.inp"
+
+particle 1pass
+fuel1	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 11 inf
+cell 11 2-1 graph -11
+pbed p1part 2-1 "1pass.inp"
+
+
+particle 2pass
+fuel2	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 12 inf
+cell 12 2-2 graph -12
+pbed p2part 2-2 "2pass.inp"
+
+
+particle 3pass
+fuel3	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 13 inf
+cell 13 2-3 graph -13
+pbed p3part 2-3 "3pass.inp"
+
+
+particle 4pass
+fuel4	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 14 inf
+cell 14 2-4 graph -14
+pbed p4part 2-4 "4pass.inp"
+
+
+particle 5pass
+fuel5	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 15 inf
+cell 15 2-5 graph -15
+pbed p5part 2-5 "5pass.inp"
+
+particle 6pass
+fuel6	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
+void
+
+surf 16 inf
+cell 16 2-6 graph -16
+pbed p6part 2-6 "6pass.inp"
+
+
+% --- based on HGTR tutorial from serpent wiki
+% --- describing core
+
+surf corebg inf
+cell coolant 3 cool -corebg
+pbed pebs 3 "all-pbbls.inp" pow
+
+% --- inner cylinder, radius of 124 cm, centered at (x,y,z) = (0,0,0), height 966 cm
+surf innercyl cyl 0.0 0.0 124 -483 483
+% --- outer reflector shell
+surf outercyl cyl 0.0 0.0 216 -575 575
+
+cell fuelpeb0 0 fill pebs  -innercyl
+cell reflector 0 graph     innercyl -outercyl
+cell outwith 0 outside   outercyl
+
+surf albsurf hexxprism 0.0 0.0 124 -483 483
+set alb 0 albsurf 1
+
+%det jin ds innercyl -1
+%det jout ds innercyl 1
+
+surf inside_outer cyl 0.0 0.0 215 -574 574
+% det jout_at_outer ds inside_outer 1
+
+
+ene twogroup 4 default2
+ene multigroup 4 scale238
+%det axial_flux de twogroup dz -575 575 1150 dv 933156
+%det radial_flux de twogroup dx -483 483 966 dy -483 483 966 dv 1150
+det core_flux de twogroup dx -483 483 322 dy -483 483 322 dz -575 575 230 dv 45.0
+
+%include "./branches.inc"
+
+% Set Cross section Libraries 
+set acelib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7u.xsdata"
+set declib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.dec"
+set nfylib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.nfy"
+
+% run parameters
+
+set pop 100000 200 50
+
+%set fpcut 1E-10
+set fum defaultmg 2 1 1E-7
+set power 2E8
+set bc 1
+set opti 1
+
+plot 33 8000 8000
+plot 33 9000 9000 0.0 -15 15 -15 15
+plot 13 864 2300
+
+mesh 3 1000 1000
+mesh 1 1000 1000
+
+% Generate 1 group cross sections
+include "./xs_nuclides.inc"
