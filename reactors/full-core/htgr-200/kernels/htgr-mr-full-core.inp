@@ -8,47 +8,13 @@
 
 include "./pure_materials.inc"
 
-mix p0blend
-fuel0   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
+%kept for reference
+%mix p0blend
+%fuel0   0.01105
+%pyroc   0.03726
+%sic     0.01613
+%graph   0.9356
 
-mix p1blend
-fuel1   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
-
-mix p2blend
-fuel2   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
-
-mix p3blend
-fuel3   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
-
-mix p4blend
-fuel4   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
-
-mix p5blend
-fuel5   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
-
-mix p6blend
-fuel6   0.01105
-pyroc   0.03726
-sic     0.01613
-graph   0.9356
 
 
 therm grph grj3.18t
@@ -57,40 +23,94 @@ therm grph grj3.18t
   * Geometry definitions *
   ************************/
 
-particle p0part
-p0blend    2.5
-graph      3.0
+particle 0pass
+fuel0	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p1part
-p1blend    2.5
-graph      3.0
+surf 10 inf
+cell 10 2-0 graph -10
+pbed p0part 2-0 "0pass.inp"
+
+particle 1pass
+fuel1	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p2part
-p2blend    2.5
-graph      3.0
+surf 11 inf
+cell 11 2-1 graph -11
+pbed p1part 2-1 "1pass.inp"
+
+
+particle 2pass
+fuel2	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p3part
-p3blend    2.5
-graph      3.0
+surf 12 inf
+cell 12 2-2 graph -12
+pbed p2part 2-2 "2pass.inp"
+
+
+particle 3pass
+fuel3	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p4part
-p4blend    2.5
-graph      3.0
+surf 13 inf
+cell 13 2-3 graph -13
+pbed p3part 2-3 "3pass.inp"
+
+
+particle 4pass
+fuel4	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p5part
-p5blend    2.5
-graph      3.0
+surf 14 inf
+cell 14 2-4 graph -14
+pbed p4part 2-4 "4pass.inp"
+
+
+particle 5pass
+fuel5	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
 
-particle p6part
-p6blend    2.5
-graph      3.0
+surf 15 inf
+cell 15 2-5 graph -15
+pbed p5part 2-5 "5pass.inp"
+
+particle 6pass
+fuel6	   0.02125
+graph      0.03075
+pyroc	   0.03475
+sic	   0.03825
+pyroc	   0.04225
 void
+
+surf 16 inf
+cell 16 2-6 graph -16
+pbed p6part 2-6 "6pass.inp"
+
 
 % --- based on HGTR tutorial from serpent wiki
 % --- describing core
@@ -141,9 +161,9 @@ set power 2E8
 set bc 1
 set opti 1
 
-%plot 33 8000 8000
-%plot 33 9000 9000 0.0 -15 15 -15 15
-%plot 13 864 2300
+plot 33 8000 8000
+plot 33 9000 9000 0.0 -15 15 -15 15
+plot 13 864 2300
 
 mesh 3 1000 1000
 mesh 1 1000 1000

@@ -6,7 +6,7 @@
  * Material definitions *
  ************************/
 
-include "./pure_materials.inc"
+include "./y12_materials.inc"
 
 mix p0blend
 fuel0   0.01105
@@ -97,7 +97,7 @@ void
 
 surf corebg inf
 cell coolant 3 cool -corebg
-pbed pebs 3 "all-pbbls.inp" pow
+pbed pebs 3 "shuffled-pbbls.inp" pow
 
 % --- inner cylinder, radius of 124 cm, centered at (x,y,z) = (0,0,0), height 966 cm
 surf innercyl cyl 0.0 0.0 124 -483 483
@@ -133,7 +133,7 @@ set nfylib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.nfy"
 
 % run parameters
 
-set pop 100000 200 50
+set pop 50000 100 50
 
 %set fpcut 1E-10
 set fum defaultmg 2 1 1E-7

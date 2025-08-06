@@ -6,7 +6,7 @@
  * Material definitions *
  ************************/
 
-include "./pure_materials.inc"
+include "./ebr2_materials.inc"
 
 mix p0blend
 fuel0   0.01105
@@ -124,7 +124,7 @@ ene multigroup 4 scale238
 %det radial_flux de twogroup dx -483 483 966 dy -483 483 966 dv 1150
 det core_flux de twogroup dx -483 483 322 dy -483 483 322 dz -575 575 230 dv 45.0
 
-%include "./branches.inc"
+include "./branches.inc"
 
 % Set Cross section Libraries 
 set acelib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7u.xsdata"
@@ -133,7 +133,7 @@ set nfylib "/home/zoe/serpent-2.32/xsdata/endfb7/sss_endfb7.nfy"
 
 % run parameters
 
-set pop 100000 200 50
+set pop 50000 100 50
 
 %set fpcut 1E-10
 set fum defaultmg 2 1 1E-7
